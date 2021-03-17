@@ -2,15 +2,17 @@
 > pytorch implementation of FixMatch paper as a fastai callback
 
 
+To use this callback you need:  
+- A FixMatchTransform: This is a transform that performs weak and strong augmentations on each of the unlabeled images as shown above. This can be used when creating the dataset. 
+
+- A pytorch dataloader for the transformed unlabeled images. This dataloader is passed to the `FixMatch` callback.
+
+
 Below is a snapshot from the paper that shows how to handle unlabeled images.  
 
 ![](/imgs/fixmatchpaper.png)
 
 
-To use this callback you need:  
-- A FixMatchTransform: This is a transform that performs weak and strong augmentations on each of the unlabeled images as shown above. This can be used when creating the dataset. 
-
-- A pytorch dataloader for the transformed unlabeled images. This dataloader is passed to the `FixMatch` callback.
 
 ## Data Preparation 
 In this implementation, FixMatchTransform utilizes `rand_augment_transform` from *timm* library.
