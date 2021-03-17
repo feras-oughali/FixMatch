@@ -5,7 +5,7 @@ This work is ported from FixMatch pytorch implementation [repo](https://github.c
 
 Below is a snapshot from the paper that shows how to handle unlabeled images.  
 
-![fixmatchpaper.png](attachment:fixmatchpaper.png)
+![(/imgs/fixmatchpaper.png)
 
 
 To use this callback you need:  
