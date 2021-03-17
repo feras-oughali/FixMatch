@@ -117,5 +117,8 @@ Finally, just pass the callback to the Learner and train as usual.
 ```python
 learn = Learner(dls, model, cbs=[FixMatch(unlabeled_trainloader)])
 ```
+## Example
+A test run on the STL10 dataset can be found in this [notebook](/notebooks/FixMatch_pytorch_fastai_STL10.ipynb)
 
+## Credits 
 This work is ported from FixMatch pytorch implementation [repo](https://github.com/kekmodel/FixMatch-pytorch) by Jungdae Kim. For more details about FixMatch, have a look at this excellent blog post [The Illustrated FixMatch for Semi-Supervised Learning](https://amitness.com/2020/03/fixmatch-semi-supervised/). FixMatch paper can be found [here](https://arxiv.org/abs/2001.07685).
