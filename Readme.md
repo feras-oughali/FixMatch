@@ -1,7 +1,6 @@
 # FixMatch for Semi-Supervised Learning
 > pytorch implementation of FixMatch paper as a fastai callback
 
-This work is ported from FixMatch pytorch implementation [repo](https://github.com/kekmodel/FixMatch-pytorch) by Jungdae Kim. For more details about FixMatch, have a look at this excellent blog post [The Illustrated FixMatch for Semi-Supervised Learning](https://amitness.com/2020/03/fixmatch-semi-supervised/). FixMatch paper can be found [here](https://arxiv.org/abs/2001.07685).
 
 Below is a snapshot from the paper that shows how to handle unlabeled images.  
 
@@ -13,6 +12,7 @@ To use this callback you need:
 
 - A pytorch dataloader for the transformed unlabeled images. This dataloader is passed to the `FixMatch` callback.
 
+## Data Preparation 
 In this implementation, FixMatchTransform utilizes `rand_augment_transform` from *timm* library.
 
 
@@ -60,7 +60,7 @@ unlabeled_trainloader = torch.utils.data.DataLoader(
         shuffle=True,
         drop_last=True)
 ```
-
+## FixMatch callback
 FixMatch callback takes:
 - *unlabeled_trainloader*
 - *threshold*: for generating the pseudo labels
@@ -119,3 +119,5 @@ Finally, just pass the callback to the Learner and train as usual.
 ```python
 learn = Learner(dls, model, cbs=[FixMatch(unlabeled_trainloader)])
 ```
+
+This work is ported from FixMatch pytorch implementation [repo](https://github.com/kekmodel/FixMatch-pytorch) by Jungdae Kim. For more details about FixMatch, have a look at this excellent blog post [The Illustrated FixMatch for Semi-Supervised Learning](https://amitness.com/2020/03/fixmatch-semi-supervised/). FixMatch paper can be found [here](https://arxiv.org/abs/2001.07685).
