@@ -3,16 +3,12 @@
 
 
 To use this callback you need:  
-- A FixMatchTransform: This is a transform that performs weak and strong augmentations on each of the unlabeled images as shown above. This can be used when creating the dataset. 
-
+- A FixMatchTransform: This is a transform that performs weak and strong augmentations on each of the unlabeled images as shown below. This can be used when creating the dataset. 
 - A pytorch dataloader for the transformed unlabeled images. This dataloader is passed to the `FixMatch` callback.
-
 
 Below is a snapshot from the paper that shows how to handle unlabeled images.  
 
 ![](/imgs/fixmatchpaper.png)
-
-
 
 ## Data Preparation 
 In this implementation, FixMatchTransform utilizes `rand_augment_transform` from *timm* library.
